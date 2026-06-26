@@ -1,0 +1,15 @@
+streamlit==1.35.0
+pandas==2.2.2
+numpy==1.26.4
+matplotlib==3.8.4
+seaborn==0.13.2
+plotly==5.22.0
+scikit-learn==1.6.1
+requests==2.31.0
+lightgbm==4.3.0
+pillow==10.3.0
+imbalanced-learn==0.12.3
+shap==0.45.1
+scipy==1.11.4
+numba==0.59.1
+flask==3.0.3
