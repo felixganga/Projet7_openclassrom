@@ -17,6 +17,7 @@ import pickle
 import warnings
 from functools import lru_cache
 from pathlib import Path
+import urllib.request
 
 import matplotlib
 matplotlib.use("Agg")
@@ -26,6 +27,16 @@ import shap
 from flask import Flask, jsonify, request
 from sklearn.neighbors import NearestNeighbors
 
+def download_if_missing(url, destination):
+    """
+    Télécharge un fichier uniquement s'il n'existe pas.
+    """
+    destination.parent.mkdir(parents=True, exist_ok=True)
+
+    if not destination.exists():
+        print(f"Téléchargement de {destination.name}...")
+        urllib.request.urlretrieve(url, destination)
+
 warnings.filterwarnings("ignore", category=UserWarning)
 
 app = Flask(__name__)
@@ -33,6 +44,16 @@ app = Flask(__name__)
 BASE_DIR = Path(__file__).resolve().parents[1]
 DATA_DIR = BASE_DIR / "data"
 MODEL_DIR = BASE_DIR / "models"
+
+download_if_missing(
+    "https://github.com/felixganga/Projet7_openclassroom/releases/download/v1.0/X_rfecv_test.csv",
+    DATA_DIR / "X_rfecv_test.csv",
+)
+
+download_if_missing(
+    "https://github.com/felixganga/Projet7_openclassroom/releases/download/v1.0/full_df_sample.csv",
+    DATA_DIR / "full_df_sample.csv",
+)
 
 ID_COL = "Unnamed: 0.1"
 
