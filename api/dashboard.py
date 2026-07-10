@@ -21,7 +21,7 @@ from matplotlib.image import imread
 
 st.set_page_config(page_title="Dashboard Crédit", layout="wide")
 
-API_BASE_URL = os.getenv("API_BASE_URL", "http://127.0.0.1:5000")
+API_BASE_URL = os.getenv("API_BASE_URL", "https://projet7-openclassrom.onrender.com")
 LOGO_PATH = "./Data/logo.png"
 ID_COL = "Unnamed: 0.1"
 FILTER_LABELS = {
