@@ -46,12 +46,12 @@ DATA_DIR = BASE_DIR / "data"
 MODEL_DIR = BASE_DIR / "models"
 
 download_if_missing(
-    "https://github.com/felixganga/Projet7_openclassroom/releases/download/v1.0/X_rfecv_test.csv",
+    "https://github.com/felixganga/Projet7_openclassrom/releases/download/v1.0/X_rfecv_test.csv",
     DATA_DIR / "X_rfecv_test.csv",
 )
 
 download_if_missing(
-    "https://github.com/felixganga/Projet7_openclassroom/releases/download/v1.0/full_df_sample.csv",
+    "https://github.com/felixganga/Projet7_openclassrom/releases/download/v1.0/full_df_sample.csv",
     DATA_DIR / "full_df_sample.csv",
 )
 
